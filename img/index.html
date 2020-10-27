@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Portal Service Desk - UNINOVE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css'>
+<link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.2.0/metisMenu.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div id="wrapper">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+      
+	</div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-messages">
+          <li>
+            <a href="#">
+              
+                                    </span>
+            
+              
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a class="text-center" href="#">
+              <strong>todas as mensagens</strong>
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </li>
+        </ul>
+        <!-- /.dropdown-tasks -->
+      </li>
+      <!-- /.dropdown -->
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-alerts">
+          <li>
+            <a href="#">
+              <div>
+                <i class="fa fa-comment fa-fw"></i> New Comment
+                <span class="pull-right text-muted small">4 minutes ago</span>
+              </div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#">
+              <div>
+                <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                <span class="pull-right text-muted small">12 minutes ago</span>
+              </div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#">
+              <div>
+                <i class="fa fa-envelope fa-fw"></i> Message Sent
+                <span class="pull-right text-muted small">4 minutes ago</span>
+              </div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#">
+              <div>
+                <i class="fa fa-tasks fa-fw"></i> New Task
+                <span class="pull-right text-muted small">4 minutes ago</span>
+              </div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#">
+              <div>
+                <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                <span class="pull-right text-muted small">4 minutes ago</span>
+              </div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a class="text-center" href="#">
+              <strong>See All Alerts</strong>
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </li>
+        </ul>
+        <!-- /.dropdown-alerts -->
+      </li>
+      <!-- /.dropdown -->
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-user">
+          <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+          </li>
+          <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+          </li>
+          <li class="divider"></li>
+          <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+          </li>
+        </ul>
+        
+		
+		<!-- /.dropdown-user -->
+      </li>
+      <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
+
+    <div class="navbar-default sidebar" role="navigation">
+      <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <br>
+<center><img src="img/2uninove.png" alt="uninove"></center>
+		  
+            <br>
+            <li>
+            <a href="index.html"><i class="fa fa-home fa-fw"></i> Home</a>
+          </li>
+		  
+		  <li>
+            <a href="http://www5.uninove.br/intranet/"><i class="fa fa-globe fa-fw"></i> Intranet</a>
+          </li>
+          
+		  <li>
+            <a href="http://www5.uninove.br/seu/SISTEMA/SEU_INDEX.php"><i class="fa fa-briefcase fa-fw"></i> Sistema S.E.U</a>
+          </li>
+          
+		  <li>
+            <a href="http://gaia.uninove.br:8080/portalrh/Login"><i class="fa fa-edit fa-fw"></i> RH online</a>
+		  </li>
+		  
+		  <li>
+            <a href="https://mail.uninove.br/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fmail.uninove.br%2fowa%2f"><i class="fa fa-envelope-o"> </i>  E-mail</a>
+		  </li>
+          <li>
+		 
+            <a href="#"><i class="fa fa-wrench fa-fw"></i> Ordem de Serviço<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+              <li>
+                <a href="http://localhost/servicedesk/cad_tarefa.php">Seviços - Interno</a>
+              </li>
+              <li>
+                <a href="http://www5.uninove.br/os/">Seviços - Externo</a>
+              </li>
+                </ul>
+                <!-- /.nav-third-level -->
+              </li>
+            </ul>
+            <!-- /.nav-second-level -->
+          </li>
+        </ul>
+      </div>
+      <!-- /.sidebar-collapse -->
+    </div>
+	
+	
+
+    <!-- /.navbar-static-side -->
+  
+  
+  
+  </nav>
+
+  
+  
+  
+  
+  <div id="page-wrapper">
+   
+  
+    
+   
+    
+	
+<!-- \\conteudo menu -->
+
+<!-- <li class="sidebar-search"> -->
+          <br>
+		  
+		  
+		  <div class="input-group custom-search-form">
+              <input type="text" class="form-control"placeholder="Pesquisar...">
+              <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+            </div>
+            <!-- /input-group -->
+          </li>
+          
+<div class="list-group">
+  <h4 href="#" class="list-group-item list-group-item-action active"style="background-color:#1e3672;">
+ Service - Administrativo 
+  </h4>
+  <a href="list_tarefa.php" class="list-group-item list-group-item-action">Central de Tarefas</a>
+  <a href="list_report.php" class="list-group-item list-group-item-action">Report de Professores</a> 
+ <a href="http://10.116.3.15/tda/tda.php" class="list-group-item list-group-item-action">Terminal do Aluno</a>
+ <a href="#" class="list-group-item list-group-item-action">Central de Patrimonios</a>
+
+  </div>
+
+ 
+ <div class="list-group">
+<h4 href="#" class="list-group-item list-group-item-action active"style="background-color:#1e3672;">
+Laboratorio de informatica
+  </h4>
+  <a href="http://10.116.3.12/painel3/index.php" class="list-group-item list-group-item-action">Painel de alocações</a>
+  <a href="#" class="list-group-item list-group-item-action">Comandos de laboratorios</a>
+  <a href="http://www5.uninove.br/seu/SISTEMA/SEU_INDEX.php" class="list-group-item list-group-item-action">Reserva de laboratorios</a>
+</div>
+
+ <div class="list-group">
+<h4 href="#" class="list-group-item list-group-item-action active"style="background-color:#1e3672;">
+Base de conhecimento
+  </h4>
+  <a href="#" class="list-group-item list-group-item-action">Manuais</a>
+  <a href="#" class="list-group-item list-group-item-action">Procedimentos</a>
+   <a href="#" class="list-group-item list-group-item-action">Softwares e Imagens</a>
+  <a href="#" class="list-group-item list-group-item-action">Licenças</a>
+</div>
+
+
+<div class="list-group">
+<h4 href="#" class="list-group-item list-group-item-action active"style="background-color:#1e3672;"><i class="fa fa-globe fa-fw"></i>
+ Monitoramento
+  </h4>
+  <a href="https://dev.uninove.br/seu/jorge/monitora_server/index2.php" class="list-group-item list-group-item-action">Catracas</a>
+  <a href="http://srv-monitora-sa.uninove.br/" class="list-group-item list-group-item-action">Projetores</a>
+   <a href="#" class="list-group-item list-group-item-action">Chrome Book</a>
+  <a href="#" class="list-group-item list-group-item-action">Access Point</a>
+  <a href="#" class="list-group-item list-group-item-action">Impressoras</a>
+  <a href="#" class="list-group-item list-group-item-action">Cameras</a>
+ </div>
+
+ 
+  <!-- /.panel -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <i class="fa fa-clock-o fa-fw"></i>  SERVICE DESK - UNINOVE 2019
+    </div>
+    
+           
+    <!-- /.panel-body -->
+  </div>
+  <!-- /.panel -->
+</div>
+</div>
+<!-- /.panel .chat-panel -->
+</div>
+<!-- /.col-lg-4 -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+ <script src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.2.0/metisMenu.min.js'></script>
+<script src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'></script>
+<script src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
