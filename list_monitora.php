@@ -227,7 +227,13 @@
           </div>
         </div>
       </div><br>
+        <a href="pendencias.php" style="color: black; text-decoration: none; font-size: 18px">Chamados não atendidos nos dias anteriores a hoje: <?php 
+            $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluida' AND abertura != '".$data."' "); 
+            $count->execute();
+            $variavelcont=$count->rowCount();
+            echo $variavelcont;
 
+          ?></a> 
         <h3>CHAMADOS ABERTOS HOJE: <?php echo $data;?></h3>
 
           <table   class="table table-striped">
