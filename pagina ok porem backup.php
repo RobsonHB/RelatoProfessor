@@ -27,7 +27,7 @@
 </head>
 
 
-<body onload="pisca()">
+<body>
 
 
   <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -48,6 +48,7 @@
           <button type="button" class="btn btn-dark">Ocorrências do dia: <span class="badge badge-light"></span>  
             <?php 
 
+
               $count=$pdo->prepare("SELECT * FROM help_infra where abertura = '".$data."' "); 
               $count->execute();
               $variavel0=$count->rowCount();
@@ -61,8 +62,13 @@
 
   <div class="container-fluid"><br>
 
-    <center> <h1 class="page-header">Dashboard - Infraestrutura predial</h1> </center>
+      
+      
+
        
+         <center> <h1 class="page-header">Dashboard - Infraestrutura predial</h1> </center>
+       
+    
       <!-- /.row -->
       <div class="row">
         <div class="col-lg-3 col-md-6">
@@ -70,27 +76,40 @@
             <div class="panel-heading">
               <div class="row">
                 <div class="col-xs-3">
-                  <?php
-                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Wi-fi' AND abertura = '".$data."' OR status !='Concluido' AND problema = 'Wifi' AND abertura = '".$data."' "); 
-                    $count->execute();
-                    $soma1=$count->rowCount();
+                    <?php
 
-                    if($soma1 > 0){  
-                      echo "<i class='fa fa-wifi fa-3x' id='pisca1'></i>";
-                    }else{
-                       echo "<i class='fa fa-wifi fa-3x' ></i>";
+                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Wi-fi' AND abertura = '.$data.' "); 
+                    $count->execute();
+                    $soma=$count->rowCount();
+
+                    if($soma > 0){
+
+                      echo "<i class='fa fa-wifi fa-3x' id='pisca'></i>";
+
+                     }else{
+                      echo "<i class='fa fa-wifi fa-3x' ></i>";
                    }
                   ?>
+
+
                 </div>
                 <div class="col-xs-9 text-right">
+                  
+                     
+                   
+
                   <div class="huge">
                     <?php 
-                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema='Wi-fi' and status != 'Concluida' AND abertura = '".$data."' OR status !='Concluido' AND problema = 'Wifi' AND abertura = '".$data."' "); 
+                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema='Wi-fi' and status != 'Concluida' "); 
                       $count->execute();
                       $variavel=$count->rowCount();
                       echo $variavel;
                     ?>
-                  </div>CONEXÃO WI-FI</div>
+                  </div>
+
+                 CONEXÃO WI-FI
+            
+                </div>
               </div>
             </div>
             <a href="list_externo.php">
@@ -108,32 +127,37 @@
             <div class="panel-heading">
               <div class="row">
                 <div class="col-xs-3">
-                  <?php
-                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Chromebook' AND abertura = '".$data."'"); 
+                    <?php
+                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Chromebook'"); 
                     $count->execute();
                     $soma2=$count->rowCount();
 
-                    if($soma2 > 0){  
+                    if($soma2 > 0){
+
                       echo "<i class='fa fa-chrome fa-3x' id='pisca2'></i>";
-                    }else{
-                    echo "<i class='fa fa-chrome fa-3x' id='pisca2'></i>";
-                  }
+
+                      }else{
+                       echo "<i class='fa fa-chrome fa-3x' ></i>";
+                    }
                   ?>
+
                 </div>
+
                 <div class="col-xs-9 text-right">
+
                   <div class="huge">
                     <?php 
-                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Chromebook' AND status !='concluida' AND abertura = '".$data."' "); 
+                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Chromebook' AND status !='concluida' "); 
                       $count->execute();
                       $variavel2=$count->rowCount();
                       echo $variavel2;
                     ?>
+    
                   </div>
                   <div>CHROMEBOOK</div>
                 </div>
               </div>
             </div>
-
             <a href="list_concluido.php">
               <div >
                 <span class="pull-left"></span>
@@ -150,22 +174,24 @@
             <div class="panel-heading">
               <div class="row">
                 <div class="col-xs-3">
-                  <?php
-                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Projetor' AND abertura = '".$data."' "); 
+                   <?php
+                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'projetor'"); 
                     $count->execute();
                     $soma3=$count->rowCount();
 
-                    if($soma3 > 0){  
-                      echo "<i class='fa fa-video-camera fa-3x' id='pisca3'></i>";
-                    }else{
-                    echo "<i class='fa fa-video-camera fa-3x'></i>";
-                  }
+                    if($soma3 > 0){
+                   echo "<i class='fa fa-video-camera fa-3x' id='pisca3'></i>";
+
+                     }else{
+                     echo "<i class='fa fa-video-camera fa-3x' ></i>";
+                   }
                   ?>
+
                 </div>
                 <div class="col-xs-9 text-right">
                   <div class="huge">
                     <?php
-                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Projetor' AND status !='Concluida' AND abertura = '".$data."' "); 
+                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Projetor' AND status !='Concluida'"); 
                       $count->execute();
                       $variavel3=$count->rowCount();
                       echo $variavel3;
@@ -175,7 +201,6 @@
                 </div>
               </div>
             </div>
-
             <a href="list_andamento.php">
               <div >
                 <span class="pull-left"></span>
@@ -192,22 +217,29 @@
               <div class="row">
                 <div class="col-xs-3">
                   <?php
-                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Outros' AND abertura = '".$data."' OR status !='Concluido' AND problema = 'Apoio' AND abertura = '".$data."'"); 
+                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Apoio' OR status !='Concluido' AND problema = 'Outros' "); 
                     $count->execute();
                     $soma4=$count->rowCount();
 
-                    if($soma4 > 0){  
+                    if($soma4 > 0){
                       echo "<i class='fa fa-exclamation-triangle fa-3x' id='pisca4'></i>";
-                    }else{
-                    echo "<i class='fa fa-exclamation-triangle fa-3x' ></i>";
-                  }
-                  ?>                  
 
+                      }else{
+
+                       echo "<i class='fa fa-exclamation-triangle fa-3x'></i>";
+
+                    }
+                  ?>
                 </div>
                 <div class="col-xs-9 text-right">
+                   
+                     
+
+
+                    
                   <div class="huge">
                      <?php
-                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Apoio' AND status !='Concluida' AND abertura = '".$data."' OR problema = 'Outros' AND status != 'Concluida' AND abertura = '".$data."' "); 
+                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Apoio' AND status !='Concluida' OR problema = 'Outros' AND status != 'Concluida'"); 
                       $count->execute();
                       $variavel=$count->rowCount();
                       echo $variavel;
@@ -228,6 +260,12 @@
         </div>
       </div><br>
 
+       <?php
+        $sql = "SELECT * FROM tarefa";
+        
+        
+       ?> 
+        
         <h3>CHAMADOS ABERTOS HOJE: <?php echo $data;?></h3>
 
           <table   class="table table-striped">
@@ -265,7 +303,7 @@
 
                     if($row['status'] == 'Concluida' OR $row['status'] == 'Concluido'){
 
-                      echo '<a class="btn btn-light" style="color:black;"> Finalizada</a>';
+                      echo '<a > Finalizada</a>';
 
                     }else{
 
@@ -293,28 +331,18 @@
 
 <script>
   function pisca() {
-    var f = document.getElementById('pisca1');
+    var f = document.getElementById('pisca');
     var f2 = document.getElementById('pisca2');
     var f3 = document.getElementById('pisca3');
     var f4 = document.getElementById('pisca4');
-
     setInterval(function() {
         f.style.visibility = (f.style.visibility == 'hidden' ? '' : 'hidden');
+        f2.style.visibility = (f.style.visibility == 'hidden' ? '' : 'hidden');
+        f3.style.visibility = (f.style.visibility == 'hidden' ? '' : 'hidden');
+        f4.style.visibility = (f.style.visibility == 'hidden' ? '' : 'hidden');
      }, 500);
-  
-    setInterval(function() {
-          f2.style.visibility = (f.style.visibility == 'hidden' ? '' : 'hidden');
-       }, 500);
-    
-    setInterval(function() {
-          f3.style.visibility = (f.style.visibility == 'hidden' ? '' : 'hidden');
-       }, 500);
-    
-    setInterval(function() {
-          f4.style.visibility = (f.style.visibility == 'hidden' ? '' : 'hidden');
-       }, 500);  
   }
-  
+
   function myFunction() {
     var element = document.body;
     element.classList.toggle("dark-mode");

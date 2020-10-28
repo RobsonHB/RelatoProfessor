@@ -18,7 +18,7 @@
 <div class="container">  
  
     
-<form id="contact" action="report.php" method="POST">
+<form id="contact" action="form_help.php" method="POST">
   
  <center><img src="media/PROF_HELP.png" alt="uninove" height="115" width="380"></center>   
    <center><h4>Preencha o formulario a baixo:</h4></center> 
@@ -28,26 +28,26 @@
 </p>
 				
    <fieldset>
-	<input class="form-control" name="tb_nome" type="text" placeholder="Nome professor (a)" required="" value="<?php echo !empty($tb_nome)?$tb_nome: '';?>">
-												<?php if(!empty($tb_nomeErro)): ?>
-												<span class="help-inline"><?php echo $tb_nomeErro;?></span>
+	<input class="form-control" name="nome_professor" type="text" placeholder="Nome professor (a)" required="" value="<?php echo !empty($nome_professor)?$nome_professor: '';?>">
+												<?php if(!empty($nome_professor)): ?>
+												<span class="help-inline"><?php echo $nome_professor;?></span>
 												<?php endif;?>
 	</fieldset>
     <fieldset>
       
-	  <input class="form-control" name="tb_matricula" type="text" placeholder="N° matricula" required="" value="<?php echo !empty($tb_matricula)?$tb_matricula: '';?>">
-												<?php if(!empty($tb_matriculaErro)): ?>
-												<span class="help-inline"><?php echo $tb_matriculaErro;?></span>
+	  <input class="form-control" name="matricula" type="text" placeholder="N° matricula" required="" value="<?php echo !empty($matricula)?$matricula: '';?>">
+												<?php if(!empty($matriculaErro)): ?>
+												<span class="help-inline"><?php echo $matriculaErro;?></span>
 												<?php endif;?>
 
 	
 	
 	</fieldset>
       <fieldset>
-      <div class="control-group <?php echo !empty($tb_unidadeErro)?'error ': '';?>">
+      <div class="control-group <?php echo !empty($unidadeErro)?'error ': '';?>">
 										
 										<div class="controls">
-											<td><select type="text" placeholder="Selecione" name='tb_unidade' class='form-control'>	
+											<td><select type="text" placeholder="Selecione" name='unidade' class='form-control'>	
 												<option>Unidade</option>
 												<option>Bauru</option>
                                                 <option>Vegueiro</option>
@@ -67,10 +67,10 @@
 									</div>
           
           <fieldset><br>
-      <div class="control-group <?php echo !empty($tb_predioErro)?'error ': '';?>">
+      <div class="control-group <?php echo !empty($predioErro)?'error ': '';?>">
 										
 										<div class="controls">
-											<td><select type="text" placeholder="Selecione" name='tb_predio' class='form-control'>	
+											<td><select type="text" placeholder="Selecione" name='predio' class='form-control'>	
 												<option>Prédio</option>
 												<option>A</option>
 												<option>B</option>
@@ -88,17 +88,17 @@
     </fieldset>
     </fieldset>
 	
-	 <input class="form-control" name="tb_sala" type="text" placeholder="N° Sala" required="" value="<?php echo !empty($tb_sala)?$tb_sala: '';?>">
-												<?php if(!empty($tb_salaErro)): ?>
-												<span class="help-inline"><?php echo $tb_salaErro;?></span>
+	 <input class="form-control" name="sala" type="text" placeholder="N° Sala" required="" value="<?php echo !empty($sala)?$sala: '';?>">
+												<?php if(!empty($salaErro)): ?>
+												<span class="help-inline"><?php echo $salaErro;?></span>
 												<?php endif;?>
 	
 	
        <fieldset>
-      <div class="control-group <?php echo !empty($tb_servicoErro)?'error ': '';?>">
+      <div class="control-group <?php echo !empty($problemaErro)?'error ': '';?>">
 									
 										<div class="controls">
-											<td><select type="text" placeholder="Selecione" name='tb_servico' class='form-control'>	
+											<td><select type="text" placeholder="Selecione" name='problema' class='form-control'>	
 												<option>Serviço afetado</option>
 												<option>Laboratório de informatica</option>
 												<option>Projetores</option>
@@ -135,21 +135,21 @@
     if(!empty($_REQUEST))
     {
        //Acompanha os erros de validação
-        $tb_nomeErro = null;
-        $tb_matriculaErro = null;
-        $tb_unidadeErro = null;
-        $tb_predioErro = null;
-        $tb_salaErro = null;
-		$tb_servicoErro = null;
+        $nome_professor = null;
+        $matriculaErro = null;
+        $unidadeErro = null;
+        $predioErro = null;
+        $salaErro = null;
+		$problemaErro = null;
 		
 		
 		
-        $tb_nome= $_REQUEST['tb_nome'];
-        $tb_matricula    = $_REQUEST['tb_matricula'];
-        $tb_unidade = $_REQUEST['tb_unidade'];
-        $tb_predio = $_REQUEST['tb_predio'];
-        $tb_sala = $_REQUEST['tb_sala'];
-		$tb_servico = $_REQUEST['tb_servico'];
+        $nome_professor= $_REQUEST['tb_nome'];
+        $matricula    = $_REQUEST['matricula'];
+        $unidade = $_REQUEST['unidade'];
+        $predio = $_REQUEST['predio'];
+        $sala = $_REQUEST['sala'];
+		$problema = $_REQUEST['problema'];
 		
        
         
@@ -157,41 +157,41 @@
        
         $validacao = true;
         
-        if(empty($tb_nome))
+        if(empty($nome_professor))
         {
-            $tb_nomeErro = 'Por favor digite o campo';
+            $nome_professor = 'Por favor digite o campo';
             $validacao = false;
         }
         
-        if(empty($tb_matricula))
+        if(empty($matricula))
         {
-            $tb_matriculaErro = 'Por favor digite o campo';
+            $matriculaErro = 'Por favor digite o campo';
             $validacao = false;
         }
         
-        if(empty($tb_unidade))
+        if(empty($unidade))
         {
-            $tb_unidadeErro = 'Por favor digite o campo';
+            $unidadeErro = 'Por favor digite o campo';
             $validacao = false;
         }
         
 				
-        if(empty($tb_predio))
+        if(empty($predio))
         {
-            $tb_predioErro = 'Por favor digite o campo';
+            $predioErro = 'Por favor digite o campo';
             $validacao = false;
         }
       
-	  if(empty($tb_sala))
+	  if(empty($sala))
         {
-            $tb_salaErro = 'Por favor digite o campo';
+            $salaErro = 'Por favor digite o campo';
             $validacao = false;
         }
 	   
 	   
-	   if(empty($tb_servico))
+	   if(empty($problema))
         {
-            $tb_servicoErro = 'Por favor digite o campo';
+            $problemaErro = 'Por favor digite o campo';
             $validacao = false;
         }
 	   
@@ -203,9 +203,9 @@
         {
               $pdo = Banco::conectar();
              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-             $sql = "INSERT INTO db_help_infra (tb_nome, tb_matricula, tb_unidade, tb_predio, tb_sala, tb_servico) VALUES(?,?,?,?,?,?)";
+             $sql = "INSERT INTO help_infra (nome_professor, matricula, unidade, predio, sala, problema) VALUES(?,?,?,?,?,?)";
             $q = $pdo->prepare($sql);
-             $q->execute(array($tb_nome, $tb_matricula, $tb_unidade, $tb_predio, $tb_sala, $tb_servico));
+             $q->execute(array($nome_professor, $matricula, $unidade, $predio, $sala, $problema));
             
 			 Banco::desconectar();
             //header("Location:cad_tarefa.php");

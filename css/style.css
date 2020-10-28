@@ -865,9 +865,8 @@ background: #f9f9f9;
     clear: both;
   }
 }
-ul.zg-ul-select {
-  $blue: #1e3672;;
-  border-radius: 2px;
+ul.zg-ul-select 
+{  border-radius: 2px;
   box-sizing: border-box;
   cursor: pointer;
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
@@ -1177,12 +1176,12 @@ body {
 }
 
 .list-group-item .list-group-item-action .active .t {
-    background-color: #1e3672;
-    border-color: #1e3672;
+    background-color: #CD5C5C ;
+    border-color: #CD5C5C ;
 }
 
 table tr th{
-  background:#1e3672;
+  background:#CD5C5C ;
   color:white;
   text-align:left;
   vertical-align:center;
