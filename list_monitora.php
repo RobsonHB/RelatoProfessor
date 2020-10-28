@@ -151,7 +151,7 @@
               <div class="row">
                 <div class="col-xs-3">
                   <?php
-                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Projetor' AND abertura = '".$data."' "); 
+                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Projetor' AND abertura = '".$data."' OR problema = 'Ligar/Desligar projetor' AND status != 'Concluida' AND abertura = '".$data."'"); 
                     $count->execute();
                     $soma3=$count->rowCount();
 
@@ -165,7 +165,7 @@
                 <div class="col-xs-9 text-right">
                   <div class="huge">
                     <?php
-                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Projetor' AND status !='Concluida' AND abertura = '".$data."' "); 
+                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Projetor' AND status !='Concluida' AND abertura = '".$data."' OR problema = 'Ligar/Desligar projetor' AND status != 'Concluida' AND abertura = '".$data."'"); 
                       $count->execute();
                       $variavel3=$count->rowCount();
                       echo $variavel3;
@@ -207,7 +207,11 @@
                 <div class="col-xs-9 text-right">
                   <div class="huge">
                      <?php
-                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Apoio' AND status !='Concluida' AND abertura = '".$data."' OR problema = 'Outros' AND status != 'Concluida' AND abertura = '".$data."' "); 
+                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Apoio' AND status !='Concluida' AND abertura = '".$data."' OR problema = 'Outros' AND status != 'Concluida' AND abertura = '".$data."'
+                      OR problema = 'Abrir/Fechar Porta' AND status != 'Concluida' AND abertura = '".$data."' 
+                      OR problema = 'Aumentar volume' AND status != 'Concluida' AND abertura = '".$data."'
+                      OR problema = 'Tomadas' AND status != 'Concluida' AND abertura = '".$data."'
+                      "); 
                       $count->execute();
                       $variavel=$count->rowCount();
                       echo $variavel;
