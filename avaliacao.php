@@ -89,11 +89,7 @@
 			
 			
 			
-	        $protocolo = $_REQUEST['protocolo'];
-
-
-	        $avaliacao = $_REQUEST['avaliacao'];
-			
+	       
 	       
 	        
 	       // Validaçao dos campos:

@@ -75,11 +75,12 @@
               <div class="row">
                 <div class="col-xs-3">
                   <?php
-                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Wi-fi' AND abertura = '".$data."' OR status !='Concluido' AND problema = 'Wifi' AND abertura = '".$data."' "); 
-                    $count->execute();
-                    $soma1=$count->rowCount();
+                    $count1=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Wi-fi' AND abertura = '".$data."' "); 
+                    $count1->execute();
+                    $soma1=$count1->rowCount();
 
-                    if($soma1 > 0){  
+                    if($soma1 > 0){ 
+                     
                       echo "<i class='fa fa-wifi fa-3x' id='pisca1'></i>";
                     }else{
                        echo "<i class='fa fa-wifi fa-3x' ></i>";
@@ -89,10 +90,7 @@
                 <div class="col-xs-9 text-right">
                   <div class="huge">
                     <?php 
-                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema='Wi-fi' and status != 'Concluida' AND abertura = '".$data."' OR status !='Concluido' AND problema = 'Wifi' AND abertura = '".$data."' "); 
-                      $count->execute();
-                      $variavel=$count->rowCount();
-                      echo $variavel;
+                      echo $soma1;
                     ?>
                   </div>CONEXÃO WI-FI</div>
               </div>
@@ -113,24 +111,22 @@
               <div class="row">
                 <div class="col-xs-3">
                   <?php
-                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Chromebook' AND abertura = '".$data."'"); 
-                    $count->execute();
-                    $soma2=$count->rowCount();
+                    $count2=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Chromebook' AND abertura = '".$data."' "); 
+                    $count2->execute();
+                    $soma2=$count2->rowCount();
 
                     if($soma2 > 0){  
                       echo "<i class='fa fa-chrome fa-3x' id='pisca2'></i>";
-                    }else{
-                    echo "<i class='fa fa-chrome fa-3x' id='pisca2'></i>";
-                  }
+                    }else
+                    echo "<i class='fa fa-chrome fa-3x' ></i>";
+                  
                   ?>
                 </div>
                 <div class="col-xs-9 text-right">
                   <div class="huge">
                     <?php 
-                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Chromebook' AND status !='concluida' AND abertura = '".$data."' "); 
-                      $count->execute();
-                      $variavel2=$count->rowCount();
-                      echo $variavel2;
+                      
+                      echo $soma2;
                     ?>
                   </div>
                   <div>CHROMEBOOK</div>
@@ -154,10 +150,15 @@
             <div class="panel-heading">
               <div class="row">
                 <div class="col-xs-3">
+                  <!--IMAGEM -->
                   <?php
-                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Projetor' AND abertura = '".$data."' OR problema = 'Ligar/Desligar projetor' AND status != 'Concluida' AND abertura = '".$data."'"); 
-                    $count->execute();
-                    $soma3=$count->rowCount();
+
+                    $count3=$pdo->prepare("SELECT * FROM help_infra WHERE 
+
+                         status !='Concluido' AND problema = 'Projetor' AND abertura = '".$data."' "); 
+
+                    $count3->execute();
+                    $soma3=$count3->rowCount();
 
                     if($soma3 > 0){  
                       echo "<i class='fa fa-video-camera fa-3x' id='pisca3'></i>";
@@ -166,13 +167,14 @@
                   }
                   ?>
                 </div>
+
+
                 <div class="col-xs-9 text-right">
                   <div class="huge">
+                    <!-- CONTAGEM -->
                     <?php
-                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Projetor' AND status !='Concluida' AND abertura = '".$data."' OR problema = 'Ligar/Desligar projetor' AND status != 'Concluida' AND abertura = '".$data."'"); 
-                      $count->execute();
-                      $variavel3=$count->rowCount();
-                      echo $variavel3;
+                      
+                      echo $soma3;
                     ?>
                   </div>
                   <div>PROJETOR</div>
@@ -196,9 +198,9 @@
               <div class="row">
                 <div class="col-xs-3">
                   <?php
-                    $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Outros' AND abertura = '".$data."' OR status !='Concluido' AND problema = 'Apoio' AND abertura = '".$data."'"); 
-                    $count->execute();
-                    $soma4=$count->rowCount();
+                    $count4=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluido' AND problema = 'Outros' AND abertura = '".$data."' OR status !='Concluido' AND problema = 'Abrir/Fechar porta' AND abertura = '".$data."'"); 
+                    $count4->execute();
+                    $soma4=$count4->rowCount();
 
                     if($soma4 > 0){  
                       echo "<i class='fa fa-exclamation-triangle fa-3x' id='pisca4'></i>";
@@ -211,20 +213,16 @@
                 <div class="col-xs-9 text-right">
                   <div class="huge">
                      <?php
-                      $count=$pdo->prepare("SELECT * FROM help_infra WHERE problema = 'Apoio' AND status !='Concluida' AND abertura = '".$data."' OR problema = 'Outros' AND status != 'Concluida' AND abertura = '".$data."'
-                      OR problema = 'Abrir/Fechar Porta' AND status != 'Concluida' AND abertura = '".$data."' 
-                      OR problema = 'Aumentar volume' AND status != 'Concluida' AND abertura = '".$data."'
-                      OR problema = 'Tomadas' AND status != 'Concluida' AND abertura = '".$data."'
-                      "); 
-                      $count->execute();
-                      $variavel=$count->rowCount();
-                      echo $variavel;
+                      
+                      echo $soma4;
                       ?>
                   </div>
                   <div>APOIO</div>
                 </div>
               </div>
             </div>
+
+
             <a href="list_naoiniciado.php">
               <div>
                 <span class="pull-left"></span>
@@ -236,10 +234,10 @@
         </div>
       </div><br>
         <a href="pendencias.php" style="color: black; text-decoration: none; font-size: 18px">Chamados não atendidos nos dias anteriores a hoje: <?php 
-            $count=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluida' AND abertura != '".$data."' "); 
-            $count->execute();
-            $variavelcont=$count->rowCount();
-            echo $variavelcont;
+            $count9=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluida' AND abertura != '".$data."' "); 
+            $count9->execute();
+            $variavel9=$count9->rowCount();
+            echo $variavel9;
 
           ?></a> 
         <h3>CHAMADOS ABERTOS HOJE: <?php echo $data;?></h3>
@@ -311,24 +309,30 @@
     var f2 = document.getElementById('pisca2');
     var f3 = document.getElementById('pisca3');
     var f4 = document.getElementById('pisca4');
+    var f5 = document.getElementById('pisca5');
 
     setInterval(function() {
         f.style.visibility = (f.style.visibility == 'hidden' ? '' : 'hidden');
      }, 500);
   
     setInterval(function() {
-          f2.style.visibility = (f.style.visibility == 'hidden' ? '' : 'hidden');
+        f2.style.visibility = (f2.style.visibility == 'hidden' ? '' : 'hidden');
        }, 500);
     
     setInterval(function() {
-          f3.style.visibility = (f.style.visibility == 'hidden' ? '' : 'hidden');
+        f3.style.visibility = (f3.style.visibility == 'hidden' ? '' : 'hidden');
        }, 500);
     
     setInterval(function() {
-          f4.style.visibility = (f.style.visibility == 'hidden' ? '' : 'hidden');
-       }, 500);  
+        f4.style.visibility = (f4.style.visibility == 'hidden' ? '' : 'hidden');
+       }, 500); 
+
+    setInterval(function() {
+        f5.style.visibility = (f5.style.visibility == 'hidden' ? '' : 'hidden');
+       }, 500); 
   }
-  
+
+
   function myFunction() {
     var element = document.body;
     element.classList.toggle("dark-mode");

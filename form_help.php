@@ -10,6 +10,12 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/open-iconic.min.css">
 	<link rel="stylesheet" href="style1.css">
+
+	<script>
+		function AbrirJanela(){
+    		window.open("avaliacao.php?matricula=" + '<?php echo $matricula; ?>' + "","_blank");	
+		}
+	</script>
 </head>
 
 <body>
@@ -158,8 +164,8 @@
 									  		<label for="form_need" class="form-control-lg">Serviço afetado</label>
 					                   		<td><select type="text" placeholder="Selecione" name='tb_servico' class='form-control form-control-lg border border-dark'>	
 												<option>Selecione...</option>
-												<option>Abrir/Fechar Porta</option>
-												<option>Ligar/Desligar projetor</option>
+												<option>Abrir/Fechar porta</option>
+												<option>Projetor</option>
 												
 												<option>Wi-Fi</option>
 												<option>Chromebook</option>
@@ -259,7 +265,7 @@
 		   //COLOCAR PARA ABRIR UMA ABA AO INVES DE REDIRECIONAR
 		   //session_start();
 		   //$_SESSION['matricula'] = $tb_matricula;
-	        //header("Location:avaliacao.php");
+	       //header("Location:index.html");
 		 
 	        $data = date('d-m-Y');
 	        $hora = date('H:i:s');
@@ -277,6 +283,7 @@
 				 Banco::desconectar();
 	            
 				echo "<script> alert('INFRA FOI ACIONADA, POR FAVOR, AGUARDE!');</script>";
+				echo "<script>AbrirJanela()</script>";
 				
 	        }
 	    }
