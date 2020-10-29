@@ -16,8 +16,9 @@
     
   <center><img src="media/PRO_HELP.png" alt="logo_uninove"><h1>Orientações</h1></center><br>
   <center>
-    <button class="btn btn-dark" id="videos">Videos</button>
-    <button class="btn btn-dark" id="documentacao">Documentos</button>
+   <a href="index.html"  class="btn btn-dark">Voltar</a>
+   <button class="btn btn-dark" id="videos">Videos</button>
+   <button class="btn btn-dark" id="documentacao">Documentos</button>
   </center><br>
 
   <!--<div>
@@ -26,7 +27,7 @@
 
   <div >
    <div class="jumbotron"style="background-color: #1E364C">
-      <center><h4 style="color: white; ">Conecte-se à rede Wi-Fi da UNINOVE</h4></center>
+      <center><h4 style="color: white;">Conecte-se à rede Wi-Fi da UNINOVE</h4></center>
 
       <center><video autoplay muted width="520" height="360" controls>
           <source src="media/WifiProfessor.mp4" type="video/mp4">

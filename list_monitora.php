@@ -46,7 +46,7 @@
       
     </div>
     <div class="text-right">
-    <br><a href="http://localhost/help/form_help.php"> <button type="button" class="btn btn-dark"> <span class="glyphicon glyphicon-plus-sign"></span> adicionar</button></a>
+    <br><a href="http://localhost/help/index.html"> <button type="button" class="btn btn-dark"> <span class="glyphicon glyphicon-plus-sign"></span> adicionar</button></a>
           <button type="checkbox"class="btn btn-dark" onclick="myFunction()">Modo escuro</button>
           <button class="btn btn-dark" href="http://powerbiti.uninove.br/relatorio/powerbi/Service%20Desk/Relat%C3%B3rio%20de%20OS " target="_blank">Relatório</button>
           <button type="button" class="btn btn-dark">Ocorrências do dia: <span class="badge badge-light"></span>  
@@ -154,7 +154,6 @@
                   <?php
 
                     $count3=$pdo->prepare("SELECT * FROM help_infra WHERE 
-
                          status !='Concluido' AND problema = 'Projetor' AND abertura = '".$data."' "); 
 
                     $count3->execute();
