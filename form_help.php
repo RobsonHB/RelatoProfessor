@@ -2,7 +2,7 @@
 <html lang="pt_br" >
 
 <head>
-	<title>Central de Report - Uninove</title>
+	<title>HELP Professor- UNINOVE</title>
 	<meta charset="UTF-8">
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -62,13 +62,17 @@
 												<option>Santo Amaro</option>
 												<option>Vila Maria</option>
 												<option>Vila Prudente</option>
-												<option>Memorial</option>
+												<option>Memorial A</option>
+												<option>Memorial D</option>
 												<option>Mauá</option>
 												<option>Mauá II</option>   
 												<option>Guarulhos I</option>
 												<option>Guarulhos II</option>
 												<option>Osasco</option>
 												<option>Osasco II</option>
+												<option>São Roque</option>
+												<option>São Manuel</option>
+												
 											</select></td>
 										</div>
 					              	</div>
@@ -85,7 +89,6 @@
 												<option>F</option>
 												<option>G</option>
 												<option>H</option>
-												<option>I</option>
 												<option>J</option>
 												<option>L</option>
 												<option>M</option>
@@ -93,6 +96,9 @@
 												<option>O</option>
 												<option>P</option>
 												<option>Q</option>
+												<option>A1</option>
+												<option>A2</option>
+												<option>A3</option>
 											</select></td>
 										</div>
 					           		</div>
@@ -154,11 +160,10 @@
 												<option>Selecione...</option>
 												<option>Abrir/Fechar Porta</option>
 												<option>Ligar/Desligar projetor</option>
-												<option>Aumentar volume</option>
+												
 												<option>Wi-Fi</option>
 												<option>Chromebook</option>
-												<option>Tomadas</option>
-												<option>Ventiladores</option>						
+												<option>Outros</option>					
 											</select></td>
 										</div>
 					           		</div>
@@ -194,7 +199,7 @@
 			
 			
 			
-	         $tb_nome= $_REQUEST['tb_nome'];
+	        $tb_nome= $_REQUEST['tb_nome'];
 	        $tb_matricula    = $_REQUEST['tb_matricula'];
 	        $tb_unidade = $_REQUEST['tb_unidade'];
 	        $tb_predio = $_REQUEST['tb_predio'];
@@ -251,8 +256,10 @@
 	            $tb_servicoErro = 'Por favor digite o campo';
 	            $validacao = false;
 	        }
-		   
-		   
+		   //COLOCAR PARA ABRIR UMA ABA AO INVES DE REDIRECIONAR
+		   //session_start();
+		   //$_SESSION['matricula'] = $tb_matricula;
+	        //header("Location:avaliacao.php");
 		 
 	        $data = date('d-m-Y');
 	        $hora = date('H:i:s');
@@ -268,8 +275,9 @@
 	             $q->execute(array($tb_nome, $tb_matricula, $status, $tb_unidade, $tb_andar, $tb_predio, $tb_sala, $tb_servico, $data_finalizacao, $data, $hora));
 	            
 				 Banco::desconectar();
-	            //header("Location:index.html");
-				echo "<script> alert('INFRA ACIONADA, POR FAVOR, AGUARDE!');</script>";
+	            
+				echo "<script> alert('INFRA FOI ACIONADA, POR FAVOR, AGUARDE!');</script>";
+				
 	        }
 	    }
 	 ?>

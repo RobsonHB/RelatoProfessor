@@ -9,20 +9,24 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Portal Service Desk - UNINOVE</title>
+  <title>INFRA PREDIAL - UNINOVE</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css'>
-  <link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.2.0/metisMenu.min.css'>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-  <link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
-  <link rel='stylesheet' href='https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css'>
-  <link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap.min.css'> 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel='stylesheet' href='https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css'>
+<link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.2.0/metisMenu.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel="stylesheet" href="css/style.css"> 
+<link rel="stylesheet" href="css/style2.css"> 
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css'>
+
 
 </head>
 
@@ -240,8 +244,8 @@
           ?></a> 
         <h3>CHAMADOS ABERTOS HOJE: <?php echo $data;?></h3>
 
-          <table   class="table table-striped">
-            <thead >
+          <table class="table table-striped table-hover">
+            <thead class="table thead-dark" >
               <tr>
                 <th><center>ID</center></th>
                 <th><center>Professor</center></th>
@@ -256,7 +260,7 @@
               </tr>
             </thead>
             
-            <tbody>
+            <tbody >
               <?php
                 $sql = 'SELECT * FROM help_infra where abertura = "'.$data.'" ORDER BY id DESC';
                 foreach($pdo->query($sql)as $row){
