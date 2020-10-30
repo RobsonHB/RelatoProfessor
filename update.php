@@ -1,41 +1,34 @@
 <?php 
-	
+
+	$link = $_REQUEST['link'];
+
 	require 'banco.php';
 
 	$id = null;
-	if ( !empty($_GET['id'])) 
-            {
+
+	if ( !empty($_GET['id'])){
+
 		$id = $_REQUEST['id'];
-            }
+    }
 	
-	if ( null==$id ) 
-            {
+	if ( null==$id ) {
+
 		header("Location: index.php");
-            }
+     }
 	
 	
-	if ( !empty($_POST)) 
-            {
+	if ( !empty($_POST)){
 
-
-		
 		$statusErro = null;
-		$solucaoErro = null;	
-		
-	
-      
-	  
+		$solucaoErro = null;
 	    $status = $_POST['status'];
 		$solucao = $_POST['solucao'];
-		
-		
-		//Validação
 		$validacao = true;
-		if (empty($status)) 
-                {
-                    $statusErro = 'Selecione o status';
-                    $validacao = false;
-                }
+		
+		if (empty($status)){
+            $statusErro = 'Selecione o status';
+            $validacao = false;
+        }
 		       	   
 			   
 		if (empty($solucao)) 
@@ -147,7 +140,7 @@
                     </div><br>
                     
                     <div class="form-actions text-right">
-                    	<a href="list_monitora.php" type="btn" class="btn btn-default">Voltar</a>
+                    	<a href="<?php echo $link; ?>" type="btn" class="btn btn-default">Voltar</a>
                         <button type="submit" class="btn btn-success">Atualizar</button>
                     </div>
                 </form>

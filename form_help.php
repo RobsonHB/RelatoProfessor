@@ -13,7 +13,7 @@
 
 	<script>
 		function AbrirJanela(){
-    		window.open("avaliacao.php?matricula=" + '<?php echo $matricula; ?>' + "","_blank");	
+    		window.open("avaliacao.php");	
 		}
 	</script>
 </head>
@@ -39,8 +39,8 @@
 					    	<div class="row">
 								<div class="col-md-6 col-xl-6 col-sm-6">
 									<div class="form-group">
-										<label for="form_name" class="form-control-lg">Nome *</label>
-										<input id="form_name" type="text"name="tb_nome" class="form-control form-control-lg border border-dark" placeholder="Nome do Professor (a)" required="" value="<?php echo !empty($tb_nome)?$tb_nome: '';?>">
+										<label for="form_name" class="form-control-lg">Nome</label>
+										<input id="form_name" type="text"name="tb_nome" class="form-control form-control-lg border border-dark" placeholder="Nome do Professor (a)" required value="<?php echo !empty($tb_nome)?$tb_nome: '';?>">
 											<?php if(!empty($tb_nomeErro)): ?>
 											<span class="help-inline"><?php echo $tb_nomeErro;?></span>
 											<?php endif;?>
@@ -49,7 +49,7 @@
 								  	<div class="col-md-6 col-xl-6 col-sm-6">
 									  	<div class="form-group">
 										  	<label for="form_lastname" class="form-control-lg">Matricula</label>
-										  	<input id="form_lastname" type="text" name="tb_matricula" class="form-control form-control-lg border border-dark" placeholder="N° da matricula" required="" value="<?php echo !empty($tb_matricula)?$tb_matricula: '';?>">
+										  	<input id="form_lastname" type="text" name="tb_matricula" class="form-control form-control-lg border border-dark" placeholder="N° da matricula" required value="<?php echo !empty($tb_matricula)?$tb_matricula: '';?>">
 											<?php if(!empty($tb_matriculaErro)): ?>
 											<span class="help-inline"><?php echo $tb_matriculaErro;?></span>
 											<?php endif;?>
@@ -60,11 +60,11 @@
 					  			<div class="row">
 									<div class="col-md-6 col-xl-6 col-sm-6">
 					                	<div class="form-group" >
-									  		<label for="form_need" class="form-control-lg">Unidade</label>
-											<td><select type="text" placeholder="Selecione" name='tb_unidade' class='form-control form-control-lg border border-dark'>	
-												<option>Selecione...</option>
+									  		<label for="form_need" class="form-control-lg" >Unidade</label>
+											<td><select type="text" placeholder="Selecione" name='tb_unidade' class='form-control form-control-lg border border-dark' required>	
+												<option></option>
 												<option>Bauru</option>
-												<option>Vegueiro</option>
+												<option>Vergueiro</option>
 												<option>Santo Amaro</option>
 												<option>Vila Maria</option>
 												<option>Vila Prudente</option>
@@ -78,16 +78,15 @@
 												<option>Osasco II</option>
 												<option>São Roque</option>
 												<option>São Manuel</option>
-												
 											</select></td>
 										</div>
 					              	</div>
 									<div class="col-md-6 col-xl-6 colsm-6">
 					                	<div class="form-group">
 									  		<label for="form_need" class="form-control-lg">Prédio</label>
-					                   		<td><select type="text" placeholder="Selecione" name='tb_predio' class='form-control form-control-lg border border-dark'>	
-												<option>Selecione...</option>
-												<option>A</option>
+					                   		<td><select type="text" placeholder="Selecione" name='tb_predio' class='form-control form-control-lg border border-dark'required>	
+												<option></option>
+											    <option>A</option>
 												<option>B</option>
 												<option>C</option>
 												<option>D</option>
@@ -114,8 +113,8 @@
 									<div class="col-md-6 col-xl-6 colsm-6">
 					                	<div class="form-group">
 											<label for="form_need" class="form-control-lg">Andar</label>
-					                   		<td><select type="text" placeholder="Selecione" name='tb_andar' class='form-control form-control-lg border border-dark'>	
-												<option>Selecione...</option>
+					                   		<td><select type="text" placeholder="Selecione" name='tb_andar' class='form-control form-control-lg border border-dark' required>	
+												<option></option>
 												<option>Tr</option>
 												<option>01</option>
 												<option>02</option>
@@ -136,16 +135,14 @@
 												<option>2SS</option>
 												<option>3SS</option>
 												<option>4SS</option>
-												<option>5SS</option>
-												<option>6SS</option>
 											</select></td>
 										</div>
 					            	</div>
 									<div class="col-md-6 col-xl-6 colsm-6">
 						               	<div class="form-group">
 											<label for="form_need" class="form-control-lg">Sala de Aula</label>
-						                   	<td><select type="text" placeholder="Selecione" name='tb_sala' class='form-control form-control-lg border border-dark'>	
-												<option>Selecione...</option>
+						                   	<td><select type="text" placeholder="Selecione" name='tb_sala' class='form-control form-control-lg border border-dark' required>	
+												<option></option>
 												<option>001</option>
 												<option>002</option>
 												<option>003</option>
@@ -162,12 +159,12 @@
 									<div class="col-md-12 col-xl-12 colsm-12">
 					                	<div class="form-group">
 									  		<label for="form_need" class="form-control-lg">Serviço afetado</label>
-					                   		<td><select type="text" placeholder="Selecione" name='tb_servico' class='form-control form-control-lg border border-dark'>	
-												<option>Selecione...</option>
+					                   		<td><select type="text" placeholder="Selecione" name='tb_servico' class='form-control form-control-lg border border-dark' required>	
+												<option></option>
 												<option>Abrir/Fechar porta</option>
 												<option>Projetor</option>
 												<option>Mobiliario</option>
-												<option>Tomadas</option>
+												<option>Tomada/Energia</option>
 												<option>Iluminação</option>
 												<option>Ar condicionado</option>
 												<option>Vazamento</option>

@@ -232,7 +232,7 @@
           </div>
         </div>
       </div><br>
-        <a href="pendencias.php" style="color: black; text-decoration: none; font-size: 18px">Chamados não atendidos nos dias anteriores a hoje: <?php 
+        <a href="list_geral.php" class="btn btn-danger btn-lg" >Chamados não atendidos nos dias anteriores a hoje: <?php 
             $count9=$pdo->prepare("SELECT * FROM help_infra WHERE status !='Concluida' AND abertura != '".$data."' "); 
             $count9->execute();
             $variavel9=$count9->rowCount();
@@ -281,7 +281,7 @@
 
                     }else{
 
-                      echo '<a class="btn btn-warning" href="update.php?id='.$row['id'].'">&nbspAtualizar&nbsp   </a>';
+                      echo '<a class="btn btn-warning" href="update.php?id='.$row['id'].'&link=list_monitora.php">&nbspAtualizar&nbsp   </a>';
 
                     }
                     echo ' ';
@@ -329,7 +329,7 @@
 
     setInterval(function() {
         f5.style.visibility = (f5.style.visibility == 'hidden' ? '' : 'hidden');
-       }, 500); 
+       }, 2000); 
   }
 
 
