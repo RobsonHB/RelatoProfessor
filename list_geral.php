@@ -85,10 +85,13 @@
                 <th><center>Andar</center></th>                           
                 <th><center>Sala</center></th>
                 <th><center>Serviço</center></th>
-                <th><center>Status</center></th>
-                <th><center>Nota</center></th>
+                
+				<th><center>Status</center></th>
+                <th><center>Solução</center></th>
+				<th><center>Nota</center></th>
 				<th><center>Ação</center></th>
-              </tr>
+              
+			  </tr>
             </thead>
             
             <tbody >
@@ -107,6 +110,7 @@
                   echo '<td><center>'. $row['sala'] . '</center></td>';
                   echo '<td><center>'. $row['problema'] . '</center></td>';      
 				  echo '<td><center>'. $row['status'] . '</center></td>';
+				  echo '<td><center>'. $row['solucao'] . '</center></td>';
 				  echo '<td><center>'. $row['avaliacao'] . '</center></td>';                 
 				  echo '<td width=70><center>';
 
@@ -116,7 +120,7 @@
 
                     }else{
 
-                      echo '<a class="btn btn-warning" href="update.php?id='.$row['id'].'">&nbspAtualizar&nbsp   </a>';
+                      echo '<a class="btn btn-warning" href="update2.php?id='.$row['id'].'">&nbspAtualizar&nbsp   </a>';
 
                     }
                     echo ' ';

@@ -52,7 +52,7 @@
 							 <span class="font-weight-bold text-primary ml-2 mt-1 valueSpan"></span>
 						</div>
 						
-						<center><img src="img/estrela.png" alt="estrelas" height="45" width="297"></center><br>
+						<center><img src="img/estrela.png" alt="estrelas" height="45" width="265"></center><br>
 						
 						<div class="row">
 					       	<div class="col-md-12 col-xl-12 colsm-12">

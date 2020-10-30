@@ -53,7 +53,7 @@
                     $q = $pdo->prepare($sql);
                     $q->execute(array($status,$solucao,$id));
                     Banco::desconectar();
-                    header("Location: list_monitora.php");
+                    header("Location: list_geral.php");
 		}
 	} 
         else 
@@ -106,7 +106,7 @@
                         <h3 class="well">ACOMPANHAMENTO DE CHAMADO</h3>
                     </div>
              
-                    <form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
+                    <form class="form-horizontal" action="update2.php?id=<?php echo $id?>" method="post">
                         
                    
 				   
@@ -156,7 +156,7 @@
                         <br/>
                       <div class="form-actions">
                           <button type="submit" class="btn btn-success">Atualizar</button>
-                          <a href="list_monitora.php" type="btn" class="btn btn-default">Voltar</a>
+                          <a href="list_geral.php" type="btn" class="btn btn-default">Voltar</a>
                         </div>
                     </form>
                 </div>                 

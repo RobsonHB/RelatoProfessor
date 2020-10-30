@@ -253,7 +253,8 @@
                 <th><center>Sala</center></th>
                 <th><center>Serviço</center></th>
                 <th><center>Status</center></th>
-                <th><center>Ação</center></th>
+                
+				<th><center>Ação</center></th>
               </tr>
             </thead>
             

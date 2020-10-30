@@ -166,7 +166,11 @@
 												<option>Selecione...</option>
 												<option>Abrir/Fechar porta</option>
 												<option>Projetor</option>
-												
+												<option>Mobiliario</option>
+												<option>Tomadas</option>
+												<option>Iluminação</option>
+												<option>Ar condicionado</option>
+												<option>Vazamento</option>
 												<option>Wi-Fi</option>
 												<option>Chromebook</option>
 												<option>Outros</option>					
