@@ -13,8 +13,11 @@
 		header("Location: index.php");
             }
 	
+	
 	if ( !empty($_POST)) 
             {
+
+
 		
 		$statusErro = null;
 		$solucaoErro = null;	
@@ -82,85 +85,76 @@
 <!DOCTYPE html>
 <html lang="pt" >
 
-<head>
-  <meta charset="UTF-8">
-  <title>INFRA PREDIAL - UNINOVE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<head>
+		<meta charset="UTF-8">
+		<title>INFRA PREDIAL - UNINOVE</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	  	<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+		<link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css'>
+		<link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.2.0/metisMenu.min.css'>
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+	    <link rel="stylesheet" href="css/style2.css">
+	</head>
+	<br><br><br><br>
 
-  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
-<link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css'>
-<link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.2.0/metisMenu.min.css'>
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+	<body>
 
-      <link rel="stylesheet" href="css/style2.css">
-</head>
-<br>
-<br>
-<br>
-<br>
-
-        <div class="container">
-                <div class="span10 offset1">
-                    <div class="row">
-                        <h3 class="well">ACOMPANHAMENTO DE CHAMADO</h3>
-                    </div>
+		<div class="container">
+			<div class="jumbotron">
+            <div class="span10 offset1">
+              	<center><img src="img/uninove22.png"></center>
+                <div class="row">
+                    <center><h3 class="well">ATUALIZAÇÃO DE CHAMADO</h3></center>
+                </div>
              
-                    <form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
-                        
-                   
-				   
-				   
-				
-                        
-                        <div class="control-group <?php echo !empty($statusErro)?'error':'';?>">
-                        <label class="control-label">Atualizar status</label>
-                        <div class="controls">
+                <form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
+                    <div class="control-group <?php echo !empty($statusErro)?'error':'';?>">
+                    	<label class="control-label">Atualizar status</label>
+                    	<div class="controls">
                            <br>
 						  
 						   <td><select type="text" placeholder="Status" name='status' class='form-control'>	
-												
-												<option>Direcionado</option>
-												<option>Em andamento</option>
-												<option>Concluido</option>
-												</select></td>
+								<option></option>			
+								<option>Direcionado</option>
+								<option>Em andamento</option>
+								<option>Concluido</option>
+							</select></td>
 												
                             <?php if (!empty($statusErro)): ?>
                                 <span class="help-inline"><?php echo $statusErro;?></span>
                             <?php endif; ?>
                         </div>
-                      </div>
-					  <br>
-					  
-					  
-					      <div class="control-group <?php echo !empty($solucaoErro)?'error':'';?>">
+                    </div><br>
+					
+					<div class="control-group <?php echo !empty($solucaoErro)?'error':'';?>">
                         <label class="control-label">Solução do chamado</label>
-                        <div class="controls">
-                           <br>
-					  
-					  
-					       <td><select type="text" placeholder="Solução do Chamado" name='solucao' class='form-control'>	
-												<option>--</option>												
-												<option>Professor nao soube utilizar a ferramenta</option>
-												<option>Professor esqueceu a senha</option>
-												<option>Direcionado T.I</option>
-											    <option>Direcionado Manutenção</option>
-												<option>Professor foi orientado</option>
-												</select></td>
+                        <div class="controls"><br>
+					       	<td><select type="text" placeholder="Solução do Chamado" name='solucao' class='form-control'>	
+								<option></option>												
+								<option>Professor nao soube utilizar a ferramenta</option>
+								<option>Professor esqueceu a senha</option>
+								<option>Direcionado T.I</option>
+							    <option>Direcionado Manutenção</option>
+								<option>Professor foi orientado</option>
+							</select></td>
 												
                             <?php if (!empty($solucaoErro)): ?>
                                 <span class="help-inline"><?php echo $solucaoErro;?></span>
                             <?php endif; ?>
+
                         </div>
-                      </div>
-                        <br/>
-                      <div class="form-actions">
-                          <button type="submit" class="btn btn-success">Atualizar</button>
-                          <a href="list_monitora.php" type="btn" class="btn btn-default">Voltar</a>
-                        </div>
-                    </form>
-                </div>                 
-    </div> 
-  </body>
+                    </div><br>
+                    
+                    <div class="form-actions text-right">
+                    	<a href="list_monitora.php" type="btn" class="btn btn-default">Voltar</a>
+                        <button type="submit" class="btn btn-success">Atualizar</button>
+                    </div>
+                </form>
+            </div>
+            </div>                 
+    	</div>  	 
+  	</body>
+
 </html>
 

@@ -17,14 +17,15 @@
 </head>
 
 <body>
-
+<br>
 	<div class="container">  
-	 	<br><br>
-	 	<center><img src="media/PROF_HELP.png" alt="uninove" height="115" width="380"></center>   
-	 	<a href="index.html"  class="btn btn-dark">Voltar</a><br><br>
+		<div class="jumbotron">
+	 		<a href="index.html"  class="btn btn-dark">Voltar</a><br><br>
+	 	<center><img src="media/PROF_HELP.png" alt="uninove" height="115" width="380"></center>  <br> 
+	 	
 	   	
 
-	   	<div class="jumbotron">
+	   	
 		<center><h2>Professor(a), pedimos a gentileza que avalie o nosso atendimento</h2></center> <br>
 
 		<form   method="POST">
